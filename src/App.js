@@ -29,10 +29,16 @@ function App() {
   return (
     
     <div className="App">
-      <button onClick={handleGoogleSignIn}>sign in</button>
+      
       <h2>{user.displayName}</h2>
       <p>{user.email}</p>
-      <button onClick={handleSignout}>Sign out</button>
+      {
+        user.email ? <button onClick={handleSignout}>Sign out</button>
+        :
+        <button onClick={handleGoogleSignIn}>sign in</button>
+
+      }
+      
       
      
     </div>
